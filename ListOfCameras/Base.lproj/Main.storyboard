@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aYX-QG-aPC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Список камер Красноярска-->
+        <scene sceneID="pFn-5V-DX7">
+            <objects>
+                <tableViewController id="QLo-ph-gVg" customClass="TableViewController" customModule="ListOfCameras" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="1ys-m9-87k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cameraCell" rowHeight="400" id="4kK-9w-Ojm" customClass="CameraViewCell" customModule="ListOfCameras" customModuleProvider="target">
+                                <rect key="frame" x="20" y="49.5" width="374" height="400"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4kK-9w-Ojm" id="tvz-bD-dyf">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="400"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LPb-gL-teE">
+                                            <rect key="frame" x="10" y="5" width="354" height="280"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UA-SY-1H1">
+                                            <rect key="frame" x="10" y="290" width="354" height="100"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3UA-SY-1H1" firstAttribute="top" secondItem="LPb-gL-teE" secondAttribute="bottom" constant="5" id="2yH-4b-u6u"/>
+                                        <constraint firstItem="LPb-gL-teE" firstAttribute="top" secondItem="tvz-bD-dyf" secondAttribute="top" constant="5" id="DUL-2T-MAX"/>
+                                        <constraint firstAttribute="trailing" secondItem="LPb-gL-teE" secondAttribute="trailing" constant="10" id="Ibp-6G-vKS"/>
+                                        <constraint firstItem="LPb-gL-teE" firstAttribute="leading" secondItem="tvz-bD-dyf" secondAttribute="leading" constant="10" id="LGy-g6-Agb"/>
+                                        <constraint firstAttribute="trailing" secondItem="3UA-SY-1H1" secondAttribute="trailing" constant="10" id="PN4-Ix-19a"/>
+                                        <constraint firstItem="LPb-gL-teE" firstAttribute="height" secondItem="tvz-bD-dyf" secondAttribute="height" multiplier="0.7" id="feZ-am-Yed"/>
+                                        <constraint firstItem="3UA-SY-1H1" firstAttribute="leading" secondItem="tvz-bD-dyf" secondAttribute="leading" constant="10" id="rtM-2a-8ig"/>
+                                        <constraint firstAttribute="bottom" secondItem="3UA-SY-1H1" secondAttribute="bottom" constant="10" id="z03-xU-lLh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cameraView" destination="LPb-gL-teE" id="17e-pi-4JG"/>
+                                    <outlet property="nameStreet" destination="3UA-SY-1H1" id="zuW-qK-8od"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QLo-ph-gVg" id="x5V-ul-i9v"/>
+                            <outlet property="delegate" destination="QLo-ph-gVg" id="5gD-xD-RMp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Список камер Красноярска" id="kEh-t0-btA"/>
+                    <connections>
+                        <segue destination="Wdc-ZM-ghE" kind="show" identifier="viewStreet" id="v9s-LN-OuU"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89h-dK-wOz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121.7391304347827" y="62.946428571428569"/>
+        </scene>
+        <!--Street View Controller-->
+        <scene sceneID="8u4-g3-D4a">
+            <objects>
+                <viewController storyboardIdentifier="StreetViewController" id="gp1-QD-ikP" customClass="StreetViewController" customModule="ListOfCameras" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="egk-AI-a8Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdK-8L-Fxq">
+                                <rect key="frame" x="10" y="98" width="394" height="221.5"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AdK-8L-Fxq" secondAttribute="height" multiplier="16:9" id="DlQ-Ee-4e6"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GAT-96-6dW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GAT-96-6dW" firstAttribute="trailing" secondItem="AdK-8L-Fxq" secondAttribute="trailing" constant="10" id="7H2-dY-8YS"/>
+                            <constraint firstItem="AdK-8L-Fxq" firstAttribute="top" secondItem="GAT-96-6dW" secondAttribute="top" constant="10" id="aMS-wo-JLI"/>
+                            <constraint firstItem="AdK-8L-Fxq" firstAttribute="leading" secondItem="GAT-96-6dW" secondAttribute="leading" constant="10" id="ryU-EP-ne2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="av8-cd-bvr"/>
+                    <connections>
+                        <outlet property="streetWebView" destination="AdK-8L-Fxq" id="VlF-wk-0Wx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jtK-xh-kB7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2889.8550724637685" y="62.946428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uYW-Lf-YIZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aYX-QG-aPC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HLS-bZ-PWu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QLo-ph-gVg" kind="relationship" relationship="rootViewController" id="5Go-4d-IN0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x3H-nS-rwk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="211.59420289855075" y="62.946428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pg8-Si-Qd2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wdc-ZM-ghE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Pei-G2-LNK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hXU-4p-gSG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gp1-QD-ikP" kind="relationship" relationship="rootViewController" id="h4A-RR-ibI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uBZ-Zz-ar7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1979.7101449275365" y="62.946428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
